@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=14.16",
+    "npm": ">=6.14.11"
+  },
+  "name": "books-api",
+  "devDependencies": {
+    "@faker-js/faker": "^6.3.1",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/chai": "^4.3.0",
+    "@types/cors": "^2.8.10",
+    "@types/faker": "^6.6.9",
+    "@types/helmet": "^4.0.0",
+    "@types/mocha": "^9.1.0",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^17.0.21",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.10.0",
+    "husky": "^7.0.4",
+    "mocha": "^9.2.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3",
+    "supertest": "^6.2.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "cloudinary": "^1.28.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.14.1",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "sql.js": "^1.6.2",
+    "streamifier": "^0.1.1",
+    "ts-node": "^10.6.0",
+    "typeorm": "0.2.44",
+    "typeorm-seeding": "^1.6.1",
+    "typescript": "^4.6.2"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build:start": "NODE_ENV=development npx ts-node build/src/index.js",
+    "build": "npx tsc --project ./",
+    "dev": "NODE_ENV=development nodemon start",
+    "test": "export NODE_ENV=development && mocha --watch --require ts-node/register",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "seed:generate": "npm run typeorm migration:generate -- -n 'initial' -c development",
+    "seed:run": "npm run typeorm migration:run -- -c development",
+    "docker:build": "docker build -t type-express .",
+    "docker:start": "docker-compose up -d",
+    "seed-data:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config -c development",
+    "seed-data:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed -c development",
+    "schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop -c development",
+    "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync -c development"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

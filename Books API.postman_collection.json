@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "804b7514-2805-4b08-9184-5e843bfa2aec",
+		"name": "Books API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2636345"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Dom Casmurro\",\n    \"author\": \"Machado de Assis\",\n    \"isCheckoutOut\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/books/:bookIdentificationNumber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"books",
+								":bookIdentificationNumber"
+							],
+							"variable": [
+								{
+									"key": "bookIdentificationNumber",
+									"value": "b61ec98a-5b99-48d8-864a-84bbd244c6d2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/books/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5e350028-55d7-4070-83d0-15320dd31c3b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookIdentificationNumber\": \"5e350028-55d7-4070-83d0-15320dd31c3b\",\n    \"title\": \"Dom Casmurro2\",\n    \"author\": \"Machado de Assis\",\n    \"isCheckoutOut\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Marco\",\n    \"lastName\": \"Carvalho\",\n    \"libraryCardNumber\": 123,\n    \"isSuspended\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4ed17774-0bce-4496-bcbf-7b40a9a916e5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "c8138fa3-4710-4e59-8ce9-69b32ee61197"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"c8138fa3-4710-4e59-8ce9-69b32ee61197\",\n    \"firstName\": \"Marco\",\n    \"lastName\": \"Carvalho\",\n    \"libraryCardNumber\": 123,\n    \"isSuspended\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books Checked",
+			"item": [
+				{
+					"name": "Book Checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/checkout/:userId/:bookIdentificationNumber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"checkout",
+								":userId",
+								":bookIdentificationNumber"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "c8138fa3-4710-4e59-8ce9-69b32ee61197"
+								},
+								{
+									"key": "bookIdentificationNumber",
+									"value": "5e350028-55d7-4070-83d0-15320dd31c3b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Return",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/return-book/:userId/:bookIdentificationNumber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"return-book",
+								":userId",
+								":bookIdentificationNumber"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "c8138fa3-4710-4e59-8ce9-69b32ee61197"
+								},
+								{
+									"key": "bookIdentificationNumber",
+									"value": "5e350028-55d7-4070-83d0-15320dd31c3b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/book-status/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"book-status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5e350028-55d7-4070-83d0-15320dd31c3b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Checkouts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/user-checkouts/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user-checkouts",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "c8138fa3-4710-4e59-8ce9-69b32ee61197"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
